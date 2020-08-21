@@ -3,10 +3,16 @@ class Counter extends Component {
   state = {
     count: 0,
   };
+  style = {
+    fontSize: 20,
+    fontWeight: "bold",
+  };
   render() {
     return (
       <div>
-        <span className="badge badge-primary m-2">{this.formatCount()}</span>
+        <span style={this.style} className="badge badge-primary m-2">
+          {this.formatCount()}
+        </span>
         <button className="btn btn-info btn-sm">Increment</button>
       </div>
     );
