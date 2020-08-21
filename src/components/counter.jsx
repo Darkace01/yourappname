@@ -4,19 +4,16 @@ class Counter extends Component {
     count: 0,
   };
 
-  handleIncrement = ({ product }) => {
-    console.log(product);
+  handleIncrement = (product) => {
     this.setState({ count: this.state.count + 1 });
   };
-  //Assuming you are creating an ecommerce website and you want to add product this might me how you want to do that
+
   render() {
     return (
       <div>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button
-          onClick={() => {
-            this.handleIncrement(product);
-          }}
+          onClick={this.handleIncrement}
           className="btn btn-default btn-sm"
         >
           Increment
