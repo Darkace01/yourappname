@@ -3,19 +3,19 @@ class Counter extends Component {
   state = {
     count: 0,
   };
-  style = {
-    fontSize: 20,
-    fontWeight: "bold",
-  };
   render() {
     return (
       <div>
-        <span style={this.style} className="badge badge-primary m-2">
-          {this.formatCount()}
-        </span>
-        <button className="btn btn-info btn-sm">Increment</button>
+        <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
+        <button className="btn btn-default btn-sm">Increment</button>
       </div>
     );
+  }
+
+  getBadgeClasses() {
+    let classes = "badge m-2 badge-";
+    classes += this.state.count === 0 ? "warning" : "primary";
+    return classes;
   }
 
   formatCount() {
